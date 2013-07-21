@@ -109,6 +109,11 @@ header {
   position:fixed;
 }
 
+header h1 a {
+  color: #494949;
+  font-weight: bold;
+}
+      
 header ul {
   list-style:none;
   height:40px;
