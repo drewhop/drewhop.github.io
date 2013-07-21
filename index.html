@@ -1,7 +1,12 @@
 ---
+published: true
 layout: default
-title: Home
 ---
 
 <h1>This Is A Test</h1>
 <p>Of The Jekyll Broadcast System</p>
+<hr/>
+{% for post in site.posts %}
+  <small>{{ post.date | date_to_string }}</small>
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+{% endfor %}
