@@ -4,4 +4,4 @@ title: Hello World
 layout: post
 ---
 
-Hello GitHub Pages
+... and Hello GitHub Pages
