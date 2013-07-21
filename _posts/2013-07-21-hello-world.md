@@ -1,6 +1,7 @@
 ---
-layout: post
+published: true
 title: Hello World
+layout: post
 ---
 
-<h1>Hello World</h1>
+# Hello World
