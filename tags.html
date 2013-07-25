@@ -19,7 +19,7 @@ group: navigation
 
 {% capture get_items %}
   {% for tag in site.tags %}
-    {{ tag | first }}
+    {{ tag[0].name | first }}
   {% endfor %}
 {% endcapture %}
 
