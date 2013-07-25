@@ -31,7 +31,7 @@ group: navigation
   {% capture this_word %}
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
-  <li><!--<a class="caps" href={{ this_word }}>-->{{ this_word.name }}<a></li>
+  <li><!--<a class="caps" href={{ this_word }}>-->{{ this_word[0].name }}<a></li>
 {% endfor %}
 
 
