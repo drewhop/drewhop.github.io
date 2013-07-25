@@ -37,7 +37,7 @@ group: navigation
 
 {% capture get_items %}
   {% for tag in site.tags %}
-    {{ tag[0].name | first }}
+    {{ tag | first }}
   {% endfor %}
 {% endcapture %}
 
