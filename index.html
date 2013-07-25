@@ -7,9 +7,6 @@ title: Blog
 <h2>Recent Thoughts</h2>
 <hr/>
 
-<h3><a href="/categories.html">Categories</a>  <small>|</small>  <a href="/tags.html">Tags</a>  <small>|</small>  <a href="/archive.html">Archive</a>
-<hr/>
-
 {% for post in site.posts limit:7 %}
   <small>{{ post.date | date_to_string }}</small>
   <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
