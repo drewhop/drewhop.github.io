@@ -25,8 +25,16 @@ Usage:
     	<li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
     {% endfor %}
   {% else %}
-    {% for tag in tags_list %} 
-    	<li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0].name }}-ref">{{ tag[0].name }} <span>{{ tag[1].size }}</span></a></li>
+    {% assign tags_max = 0 %}
+    {% for tag in site.tags %}
+        {% if tag[1].size > tags_max %}
+            {% assign tags_max = tag[1].size %}
+        {% endif %}
+    {% endfor %}  
+    {% for i in (1..tags_max) reversed %}
+      {% for tag in tags_list %} 
+      	<li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0].name }}-ref">{{ tag[0].name }} <span>{{ tag[1].size }}</span></a></li>
+      {% endfor %}
     {% endfor %}
   {% endif %}
 {% endif %}
