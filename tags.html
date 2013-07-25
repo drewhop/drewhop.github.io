@@ -37,7 +37,7 @@ group: navigation
 
 {% capture get_items %}
   {% for tag in site.tags %}
-    {{ tag | first }}
+    {{ tag[0].name | first }}
   {% endfor %}
 {% endcapture %}
 
@@ -49,7 +49,7 @@ group: navigation
   {% capture this_word %}
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
-  <li><a class="caps" href={{ this_word[0].nam }}>{{ this_word[0].name }}<a></li>
+  <li><a class="caps" href={{ this_word }}>{{ this_word }}<a></li>
 {% endfor %}
 
 
