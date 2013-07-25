@@ -49,12 +49,12 @@ group: navigation
   {% capture this_word %}
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
-  <li><a class="caps" href={{ this_word['name'] }}>{{ this_word['name'] }}</a></li>
+  <li><a class="caps" href={{ this_word }}>{{ this_word }}</a></li>
 {% endfor %}
 
 
 {% for tag in site.tags %} 
-  <h3 id="{{ tag[0].name }}-ref">{{ tag[0].name }}</h3>
+  <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
   <ul>
     {% assign pages_list = tag[1] %}  
     {% include JB/pages_list %}
