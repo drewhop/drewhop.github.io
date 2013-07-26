@@ -49,7 +49,7 @@ group: navigation
   {% capture this_word %}
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
-  <h4 id="{{ this_word }}-ref">({{ this_word }})</h4>
+  <h4 id="{{ this_word }}-ref">({{ this_word | remove:' ' }})</h4>
   {% for post in site.posts %}
     {% if post.tags contains this_word %}
         <ul>
