@@ -54,12 +54,10 @@ group: navigation
   {% endcapture %}
   <h4 id="{{ this_word }}-ref">({{ display_word }})</h4>
   {% for post in site.posts %}
-    {% if post.tags contains display_word %}
         <ul>
            <a href="{{ post.url }}">{{ post.title }}</a>
            <span>({{ post.date | date:"%Y-%m-%d" }})</span>
         </ul>
-    {% endif %}
   {% endfor %}
 {% endfor %}
 
