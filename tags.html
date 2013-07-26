@@ -53,8 +53,9 @@ group: navigation
   {% capture display_word %}
     {{ this_word | replace:' ','' }}
   {% endcapture %}
-  <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ display_word }}-ref">{{ display_word }}</a>{% unless forloop.last %} | {% endunless %}</li>
+  <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ display_word }}-ref">{{ display_word }}</a></li>
 {% endfor %}
+<h2>display_word size: {{ display_word.size }}</h2>
 </ul>
 </hr>
 
