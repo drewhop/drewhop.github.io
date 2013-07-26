@@ -52,8 +52,10 @@ group: navigation
   <h3 id="{{ this_word }}-ref">{{ this_word }}</h3>
   {% for post in site.tags.this_word %}
         <ul>
-           <a href="{{ post.url }}">{{ post.title }}</a>
-           <span>({{ post.date | date:"%Y-%m-%d" }})</span>
+          {% assign pages_list = post[1] %}  
+          {% include JB/pages_list %}
+           <!--<a href="{{ post.url }}">{{ post.title }}</a>
+           <span>({{ post.date | date:"%Y-%m-%d" }})</span>-->
         </ul>
   {% endfor %}  
 {% endfor %}
