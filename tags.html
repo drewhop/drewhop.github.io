@@ -51,7 +51,7 @@ group: navigation
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
   {% capture display_word %}
-    {{ this_word | replace:' ','' }}
+    {{ this_word | strip_html }}
   {% endcapture %}
   <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ display_word }}-ref">{{ display_word }} <span>{{ display_word.size }}</span></a></li>
 {% endfor %}
