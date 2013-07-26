@@ -52,12 +52,16 @@ group: navigation
   {% capture display_word %}
     {{ this_word | remove:' ' }}
   {% endcapture %}
-  <h4 id="{{ this_word }}-ref">({{ display_word }})</h4>
+  <h4 id="{{ this_word }}-ref">{{ display_word }}</h4>
   {% for post in site.posts %}
-        <ul>
+    {% for tag in post.tags %}
+      {% if tag == display_word %}
+        <li>
            <a href="{{ post.url }}">{{ post.title }}</a>
            <span>({{ post.date | date:"%Y-%m-%d" }})</span>
-        </ul>
+        </li>
+      {% endfif %}
+    {% endfor %}
   {% endfor %}
 {% endfor %}
 
