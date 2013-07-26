@@ -50,9 +50,7 @@ group: navigation
     {% capture this_word %}
       {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
     {% endcapture %}
-    <li>
-      <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ this_word }}-ref"><h4>{{ this_word }}</h4></a>
-    </li>
+    <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ this_word }}-ref"><h4>{{ this_word }}</h4></a>{% unless forloop.last %} | {% endunless %}
   {% endfor %}
 </ul>
 
