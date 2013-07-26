@@ -34,7 +34,7 @@ Usage:
     {% for i in (1..tags_max) reversed %}
       {% for tag in tags_list %} 
         {% if tag[1].size == i %}
-        	<li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+        	<li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span>{{ tag[1].size }} <span>{{ tag[0].size }}</span></a></li>
         {% endif %}
       {% endfor %}
     {% endfor %}
