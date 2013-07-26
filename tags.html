@@ -16,25 +16,6 @@ group: navigation
 </ul>
 <hr/>
 
-<!--
-{% capture get_items %}
-  {% for cat in site.categories %}
-    {{ cat | first }}
-  {% endfor %}
-{% endcapture %}
-
-{% capture num_words %}
-  {{ get_items | split:' ' | sort | join:' ' | number_of_words }}
-{% endcapture %}
-
-{% for item in (1..num_words) %}
-  {% capture this_word %}
-    {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
-  {% endcapture %}
-  <li><a class="caps" href={{ this_word }}>{{ this_word }}<a></li>
-{% endfor %}
--->
-
 {% capture get_items %}
   {% for tag in site.tags %}
     {{ tag | first }}
@@ -45,6 +26,24 @@ group: navigation
   {{ get_items | split:' ' | sort | join:' ' | number_of_words }}
 {% endcapture %}
 
+{% for item in (1..num_words) %}
+  {% capture this_word %}
+    {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
+  {% endcapture %}
+  {% assign display_word = this_word|strip_html|remove:' '|strip_newlines %}
+  <h3 id="{{ display_word }}-ref">{{ display_word }}</h3>
+  {% for post in site.tags %}
+    {% for tag in post.tags %}
+      {% if tag[0] == display_word %}
+        <li>
+           <a href="{{ post.url }}">{{ post.title }}</a>
+           <span>({{ post.date | date:"%Y-%m-%d" }})</span>
+        </li>
+      {% endfif %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+<!--
 <ul class="tag_box inline">
 {% for item in (1..num_words) %}
   {% capture this_word %}
@@ -54,7 +53,7 @@ group: navigation
   <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ display_word }}-ref">{{ display_word }} <span>{{ display_word.size }}</span></a></li>
 {% endfor %}
 </ul>
-
+-->
   
 </hr>
 
