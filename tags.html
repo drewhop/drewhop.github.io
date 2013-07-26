@@ -32,14 +32,16 @@ group: navigation
   {% endcapture %}
   {% assign display_word = this_word|strip_html|remove:' '|strip_newlines %}
   <h3 id="{{ display_word }}-ref">{{ display_word }}</h3>
-  {% for post in site.posts %}
+  <ul>
+    {% for post in site.posts %}
       {% if post.tags contains display_word %}
         <li>
            <a href="{{ post.url }}">{{ post.title }}</a>
            <span>({{ post.date | date:"%Y-%m-%d" }})</span>
         </li>
       {% endif %}
-  {% endfor %}
+    {% endfor %}
+  </ul>
 {% endfor %}
 <!--
 <ul class="tag_box inline">
