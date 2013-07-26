@@ -49,9 +49,9 @@ group: navigation
   {% capture this_word %}
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
-  <li><h3 id="{{ this_word }}-ref">{{ this_word }}</h3></li>
+  <h3 id="{{ this_word }}-ref">{{ this_word }}</h3>
   <ul>
-    {% assign pages_list = tag[1] %}  
+    {% assign pages_list = this_word %}  
     {% include JB/pages_list %}
   </ul>
 {% endfor %}
