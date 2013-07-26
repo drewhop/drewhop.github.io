@@ -51,8 +51,12 @@ group: navigation
   {% endcapture %}
   <h3 id="{{ this_word }}-ref">{{ this_word }}</h3>
   <ul>
-    {% assign pages_list = this_word %}  
-    {% include JB/pages_list %}
+    {% for post in site.tags.this_word limit: 20 %}
+      <li>
+           <a href="{{ post.url }}">{{ post.title }}</a>
+           <span>({{ post.date | date:"%Y-%m-%d" }})</span>
+      </li>
+    {% endfor %}  
   </ul>
 {% endfor %}
 
