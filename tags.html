@@ -45,15 +45,17 @@ group: navigation
   {{ get_items | split:' ' | sort | join:' ' | number_of_words }}
 {% endcapture %}
 
+<ul class="tag_box inline">
 {% for item in (1..num_words) %}
   {% capture this_word %}
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
   {% capture display_word %}
-    {{ this_word | remove:' ' }}
+    {{ this_word | truncatewords:this_word }}
   {% endcapture %}
   <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ display_word }}-ref">{{ display_word }}</a>{% unless forloop.last %} | {% endunless %}</li>
 {% endfor %}
+</ul>
 </hr>
 
 
