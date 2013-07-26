@@ -51,6 +51,8 @@ group: navigation
     {{ get_items | split:' ' | sort | join:' ' | truncatewords:item | remove:'...' | split:' ' | last }}
   {% endcapture %}
   {% assign display_word = this_word|strip_html|remove:' ' %}
+  {% assign display_size = display_word.size|minus:2 %}
+  {% assign display_word = display_word|truncate:display_size %}
   <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ display_word }}-ref">{{ display_word }} <span>{{ display_word.size }}</span></a></li>
 {% endfor %}
 </ul>
