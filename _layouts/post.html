@@ -6,5 +6,11 @@ layout: default
 <article>
 <h2>{{page.title}}</h2>
 <hr/>
+
+{% if page.description != null %}
+<h4>{{ page.description }}</h4>
+<hr/>
+{% endif %}
+
 {{content}}
 </article>
