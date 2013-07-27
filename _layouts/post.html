@@ -15,12 +15,14 @@ layout: default
 {{content}}
 </article>
 
+<footer>
 <h4>Tags:</h4>
 {% include JB/setup %}
 <ul class="tag_box inline">
   {% assign tags_list = page.tags %}  
   {% include JB/tags_list %}
 </ul>
+</footer>
 
 <!--
 <ul class="unstyled tags">
