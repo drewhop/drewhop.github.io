@@ -167,6 +167,7 @@ prose:
         field:
           element: "textarea"
           label: "Description"
+          placeholder: "Enclose In Quotes"
           value: ""
 #    _posts/static:
 #      - name: "layout"
