@@ -14,17 +14,18 @@ layout: default
 
 {{content}}
 </article>
-<hr/>
 
 {% include JB/setup %}
+<ul class="tag_box inline">
+  {% assign tags_list = page.tags %}  
+  {% include JB/tags_list %}
+</ul>
+
+<!--
 <ul class="unstyled tags">
   <h4>Tags: </h4>
     {% for tag in page.tags %}
       <span><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }}</a>{% unless forloop.last %} | {% endunless %}</span>
     {% endfor %}
 </ul>
-
-<ul class="tag_box inline">
-  {% assign tags_list = page.tags %}  
-  {% include JB/tags_list %}
-</ul>
+-->
