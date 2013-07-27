@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
 
 <article>
 <h2>{{page.title}}</h2>
@@ -15,12 +14,14 @@ layout: default
 {{content}}
 </article>
 
+{% if page.tags %}
 <h4>Tags:</h4>
 {% include JB/setup %}
 <ul class="tag_box inline">
   {% assign tags_list = page.tags %}  
   {% include JB/tags_list %}
 </ul>
+{% endif %}
 
 <!--
 <ul class="unstyled tags">
