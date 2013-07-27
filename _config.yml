@@ -153,11 +153,6 @@ prose:
           element: "text"
           label: "Title"
           value: ""
-      - name: "description"
-        field:
-          element: "textarea"
-          label: "Description"
-          value: ""
 #      - name: "splash"
 #        field:
 #          element: "text"
@@ -165,15 +160,14 @@ prose:
 #          value: ""
       - name: "tags"
         field:
-          element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
-          alterable: "true"
-          options:
-            - name: "Apples"
-              value: "apples"
-            - name: "Bananas"
-              value: "bananas"
+          element: "text"
+          label: "Tags"
+          value: ""
+      - name: "description"
+        field:
+          element: "textarea"
+          label: "Description"
+          value: ""
 #    _posts/static:
 #      - name: "layout"
 #        field:
