@@ -10,12 +10,16 @@ layout: default
 {% include JB/setup %}
 <ul class="tag_box inline">
   {% assign tags_list = page.tags %}  
-  {% include JB/tags_list %}
+  {% if tags_list != null %}
+    {% include JB/tags_list %}
+  {% endif %}
 </ul>
+{% if tags_list != null %}
 <hr/>
+{% endif %}
 
 {% if page.description != null %}
-<ul><h5>{{ page.description }}</h5></ul>
+<ul><h4>{{ page.description }}</h4></ul>
 <hr/>
 {% endif %}
 
