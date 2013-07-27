@@ -2,11 +2,12 @@
 layout: post
 published: true
 title: metadata config experiment
-description: A brief test of the prose.io metadata editor.
+description: A brief test of the description.
 tags: 
   - apples
-  - dogs
-"": cats
+  - bananas
+  - cat
+"": cat
 ---
 
 * still working on the metadata options
