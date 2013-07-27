@@ -14,8 +14,15 @@ layout: default
 
 {{content}}
 </article>
-
 <hr/>
+
+<ul class="unstyled tags">
+  <h4>Tags: </h4>
+    {% for tag in post.tags %}
+      <li><a href="/tags.html#{{ tag[0] }}-ref/">{{ tag[0] }}</a>{% unless forloop.last %} | {% endunless %}</li>
+    {% endfor %}
+</ul>
+
 {% include JB/setup %}
 <ul class="tag_box inline">
   {% assign tags_list = post.tags %}  
