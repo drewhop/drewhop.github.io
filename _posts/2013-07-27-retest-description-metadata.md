@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: Retest Description Metadata
-description: null
+description: Uncommented the description config in prose settings.
 tags: prose metadata
 ---
 
