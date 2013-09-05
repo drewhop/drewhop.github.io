@@ -8,7 +8,7 @@ category: radio
 
 *   16:47:41  [Gauss](http://goo.gl/nXre6h) by [Kiln](http://www.last.fm/music/Kiln)
 
-    ![Album Cover](https://dl.dropboxusercontent.com/u/8239797/DR3WH0.png "Holo [re/lux]")
+    ![Album Cover](http://userserve-ak.last.fm/serve/174s/9993303.jpg "Holo [re/lux]")
 
 *   16:51:53  [Hugger](http://goo.gl/RemGEi) by [JVOX](http://www.last.fm/music/JVOX)
 
